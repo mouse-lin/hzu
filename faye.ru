@@ -11,7 +11,7 @@ EM.run {
   server.get_client.subscribe('/control') do |msg|
     case msg['action']
     when 'join'
-      server.get_client.publish('/chat', {'action' => 'control', 'user' => msg['user'], 'message' => 'joined the chat room'}) 
+      server.get_client.publish('/chat', {'action' => 'control', 'user' => msg['user'], 'message' => '加入聊天'}) 
     when 'message'
       server.get_client.publish('/chat', msg)
     else
